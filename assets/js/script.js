@@ -1,16 +1,12 @@
-// Seleciona o botão de animação
 const ul = document.getElementById('opcoes');
 
-// Verifica se o botão foi encontrado
 if (ul) {
-    // Adiciona um evento de clique no botão
     ul.addEventListener('click', () => {
-        // Altera a cor do botão de forma suave
+        console.log("Botão de animação clicado!");
         ul.style.backgroundColor = getRandomColor();
         ul.style.transition = 'background-color 0.5s ease';
     });
 
-    // Função para gerar uma cor aleatória
     function getRandomColor() {
         const letters = '0123456789ABCDEF';
         let color = '#';

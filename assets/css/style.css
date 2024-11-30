@@ -9,6 +9,7 @@ body {
     min-height: 100vh;
 }
 
+/* Estilo do contêiner principal */
 .container {
     max-width: 800px;
     margin: 50px auto;
@@ -20,38 +21,18 @@ body {
     overflow: hidden;
 }
 
-/* Estilo do título do header */
-header h1 {
-    color: #4a4a4a;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 4px solid #007bff;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-/* Estilo do título principal no corpo */
-main h2 {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 30px;
-    font-weight: bold;
-}
-
-/* Definindo a lista de navegação */
+/* Estilo dos botões */
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
-/* Estilo dos itens da lista de navegação */
 nav ul li {
-    margin: 15px 0;
+    display: inline-block;
+    margin: 15px;
 }
 
-/* Estilizando os botões do menu de navegação */
 nav ul li a {
     display: inline-block;
     padding: 20px 40px;
@@ -59,60 +40,14 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     border-radius: 10px;
+    background-color: #007bff;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    margin: 10px;
 }
 
-/* Efeitos ao passar o mouse sobre os botões */
+/* Efeito hover */
 nav ul li a:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Botão "Cadastrar Livro" */
-nav ul li a.cadastrar {
-    background-color: #28a745; /* Verde para cadastrar */
-    border: 2px solid #28a745;
-}
-
-/* Botão "Listar Livros" */
-nav ul li a.listar {
-    background-color: #17a2b8; /* Azul claro para listar */
-    border: 2px solid #17a2b8;
-}
-
-/* Botão "Editar Livro" */
-nav ul li a.editar {
-    background-color: #ffc107; /* Amarelo para editar */
-    border: 2px solid #ffc107;
-}
-
-/* Botão "Excluir Livro" */
-nav ul li a.excluir {
-    background-color: #dc3545; /* Vermelho para excluir */
-    border: 2px solid #dc3545;
-}
-
-/* Efeitos de hover para cada botão */
-nav ul li a.cadastrar:hover {
-    background-color: #218838; /* Escurece o verde ao passar o mouse */
-    border-color: #218838;
-}
-
-nav ul li a.listar:hover {
-    background-color: #138496; /* Escurece o azul ao passar o mouse */
-    border-color: #138496;
-}
-
-nav ul li a.editar:hover {
-    background-color: #e0a800; /* Escurece o amarelo ao passar o mouse */
-    border-color: #e0a800;
-}
-
-nav ul li a.excluir:hover {
-    background-color: #c82333; /* Escurece o vermelho ao passar o mouse */
-    border-color: #c82333;
+    background-color: #0056b3;
 }
 
 /* Estilo do rodapé */
@@ -123,18 +58,12 @@ footer {
     text-align: center;
 }
 
-/* Estilo dos links no rodapé */
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
 /* Efeito de hover no link do rodapé */
 footer a:hover {
     text-decoration: underline;
 }
 
-/* Estilos responsivos para dispositivos móveis */
+/* Responsivo */
 @media (max-width: 768px) {
     nav ul li a {
         font-size: 16px;
