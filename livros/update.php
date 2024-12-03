@@ -2,33 +2,33 @@
 include '../includes/header.php';
 include '../config/db.php';
 
-// Verifica se o ID foi passado na URL e é válido
+
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Busca o livro pelo ID no banco de dados
+    
     $stmt = $conn->prepare("SELECT * FROM livros WHERE id = :id");
     $stmt->bindParam(':id', $id, PDO::PARAM_INT); // Define como inteiro
     $stmt->execute();
     $livro = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Se o livro não for encontrado, exibe uma mensagem de erro
+    
     if (!$livro) {
         echo "<p>Livro não encontrado.</p>";
         exit;
     }
 
-    // Verifica se o formulário foi enviado
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $titulo = trim($_POST['titulo']);
         $autor = trim($_POST['autor']);
         $ano = trim($_POST['ano']);
 
-        // Validação simples (pode expandir conforme necessário)
+        
         if (empty($titulo) || empty($autor) || !is_numeric($ano)) {
             echo "<p>Preencha todos os campos corretamente!</p>";
         } else {
-            // Atualiza o livro no banco de dados
+      
             $updateStmt = $conn->prepare("
                 UPDATE livros 
                 SET titulo = :titulo, autor = :autor, ano = :ano 
@@ -41,8 +41,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
 
             if ($updateStmt->execute()) {
                 echo "<p>Livro atualizado com sucesso!</p>";
-                header('Location: read.php'); // Altere para o caminho correto
-                exit;
+                header('Location: livros\read.php'); 
             } else {
                 echo "<p>Erro ao atualizar o livro.</p>";
             }

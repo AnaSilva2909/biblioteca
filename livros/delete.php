@@ -5,7 +5,7 @@ include '../config/db.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Exclui o livro pelo ID
+    
     $stmt = $conn->prepare("DELETE FROM livros WHERE id = :id");
     $stmt->bindParam(':id', $id);
 

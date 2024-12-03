@@ -1,14 +1,14 @@
 <?php
-// Inclui o cabeçalho e a configuração de banco de dados
+
 include '../includes/header.php';
 include '../config/db.php';
 
-// Verifica se a conexão com o banco de dados foi bem-sucedida
+
 if (!$conn) {
     die("Erro de conexão com o banco de dados: " . mysqli_connect_error());
 }
 
-// Consulta para listar todos os livros
+
 try {
     $stmt = $conn->query("SELECT * FROM livros");
     $livros = $stmt->fetchAll();

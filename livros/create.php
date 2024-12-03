@@ -1,17 +1,16 @@
 <?php
-// Corrigindo os caminhos para os arquivos de inclusão
 include '../includes/header.php';
-include '../config/db.php'; // Caminho corrigido para db.php
+include '../config/db.php'; 
 
-// Verifica se o formulário foi enviado
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $ano = $_POST['ano'];
 
-    // Insere o livro no banco de dados
+    
     try {
-        // Usando o PDO com prepared statements
+       
         $stmt = $conn->prepare("INSERT INTO livros (titulo, autor, ano) VALUES (:titulo, :autor, :ano)");
         $stmt->bindParam(':titulo', $titulo);
         $stmt->bindParam(':autor', $autor);
@@ -23,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "Erro ao cadastrar o livro.";
         }
     } catch (PDOException $e) {
-        // Exibe uma mensagem de erro caso haja uma exceção
+        
         echo "Erro: " . $e->getMessage();
     }
 }
 ?>
 
-<div class="container">
+<div class="create">
     <h1>Cadastrar Livro</h1>
     <li><a href="../index.php">Home Page</a></li>
     <form method="POST">
@@ -41,6 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 
 <?php
-// Corrigindo o caminho para o rodapé
+
 include '../includes/footer.php';
 ?>
