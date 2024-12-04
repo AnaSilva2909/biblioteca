@@ -15,7 +15,7 @@
         <ul id="opcoes">
             <li class="button cadastrar"><a href="livros/create.php">Cadastrar Livro</a></li>
             <li class="button listar"><a href="livros/read.php">Listar Livros</a></li>
-            <li class="button editar"><a href="livros/update.php">Editar Livro</a></li>
+            <li class="button editar"><a href="livros/update.php">Atualizar Livros</a></li></li>
             <li class="button excluir"><a href="livros/delete.php">Excluir Livro</a></li>
         </ul>
     </nav>

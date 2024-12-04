@@ -3,6 +3,20 @@
 include '../includes/header.php';
 include '../config/db.php';
 
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Livros</title>
+    <link rel="stylesheet" href="../assets/css/style.css"> 
+</head>
+<body>
+
+<?php
+
 
 if (!$conn) {
     die("Erro de conexão com o banco de dados: " . mysqli_connect_error());
